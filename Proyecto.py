@@ -1,6 +1,7 @@
-from datetime import datetime
-import statistics
+from datetime import datetime # Importa la biblioteca para trabajar con fechas
+import statistics  # Importa la biblioteca para calculos estadisticos
 
+# Clase para representar un experimento
 class Experimento: 
     
 #Funcion de Inicializacion
