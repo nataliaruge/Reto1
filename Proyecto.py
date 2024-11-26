@@ -1,6 +1,7 @@
-from datetime import datetime
-import statistics
+from datetime import datetime # Importa la biblioteca para trabajar con fechas
+import statistics  # Importa la biblioteca para calculos estadisticos
 
+# Clase para representar un experimento
 class Experimento: 
     
 #Funcion de Inicializacion
@@ -22,15 +23,20 @@ def agregarDatos(listaExperimentos):
         except ValueError:
             print("Fecha Inválida.")
             return 
-        print ("selecciona el tipo de experimento:")
-        print ("1. Química")
-        print ("2. Biología")
-        print ("3. Física")
-        TipoExperimento = input("Ingrese el numero de acuerdo al tipo de experimento (biologia, fisica, quimica): ").lower()
-        tiposValidos = {"1":"Quimica", "2":"Biologia", "3":"Fisica"}
-        tipos=tiposValidos.get(TipoExperimento)
-        if not tipos:
-            print("Tipo de experimento no válido. Por favor, elija entre: biologia, fisica o quimica.")
+           # Solicita el tipo de experimento hasta que se ingrese uno valido
+        while True:
+            print("Selecciona el tipo de experimento:")
+            print("1. Quimica")
+            print("2. Biologia")
+            print("3. Fisica")
+            tiposValidos = {"1": "quimica", "2": "biologia", "3": "fisica"}
+            TipoExperimento = input("Ingrese el numero de acuerdo al tipo de experimento: ").strip()
+            tipos = tiposValidos.get(TipoExperimento)  # Obtiene el tipo a partir del diccionario
+            if tipos:
+                print(f"Has seleccionado el tipo de experimento: {tipos.capitalize()}")
+                break
+            else:
+                print("Tipo de experimento no valido. Por favor, elija entre las opciones disponibles.")
 
         while True:  # Bucle para asegurar que se ingresen más de 3 resultados
             resultadoObtenido_str = input("Ingrese el resultado obtenido separados por comas (ej. 5,3,7,9): ")
@@ -269,5 +275,3 @@ if __name__ == "__main__":
     menu()
             
             
-""" funcion agregar, funcion visualizar, gestionar datos, analisis de resultados,
-generar un informe, funcion comparar, validar errores, menu, funcion salir """
