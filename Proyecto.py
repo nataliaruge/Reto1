@@ -274,5 +274,3 @@ if __name__ == "__main__":
     menu()
             
             
-""" funcion agregar, funcion visualizar, gestionar datos, analisis de resultados,
-generar un informe, funcion comparar, validar errores, menu, funcion salir """
