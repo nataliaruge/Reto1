@@ -23,7 +23,7 @@ def agregarDatos(listaExperimentos):
         except ValueError:
             print("Fecha Inválida.")
             return 
-           # Solicita el tipo de experimento hasta que se ingrese uno valido
+            # Solicita el tipo de experimento hasta que se ingrese uno valido
         while True:
             print("Selecciona el tipo de experimento:")
             print("1. Quimica")
@@ -50,16 +50,15 @@ def agregarDatos(listaExperimentos):
                 print("Valor inválido. Asegúrese de ingresar solo números separados por comas.")
 
         print("\nExperimento agregado exitosamente.")              
-              
-  
 
-              
+
+
             
         #Crear un objeto Experimento y agregarlo a la lista de experimentos
         experimento = Experimento(nombreExperimento, fechaRealizacion, TipoExperimento, resultadoObtenido)
         listaExperimentos.append(experimento)  
-                 
-  
+
+
 #Funcion para Visualizar Datos             
 def visualizarDatos(listaExperimentos):
     if not listaExperimentos:
@@ -67,11 +66,11 @@ def visualizarDatos(listaExperimentos):
         return
             
     for i, experimento in enumerate(listaExperimentos, start = 1):
-       print(f"\nExperimento {i}")    
-       print(f"  Nombre del Experimento: {experimento.nombreExperimento}")    
-       print(f"  Fecha de realizacion: {experimento.fechaRealizacion.strftime('%d/%m/%Y')}") 
-       print(f"  Tipo de Experimento: {experimento.TipoExperimento}")    
-       print(f"  Resultado obtenido: {experimento.resultadoObtenido}")     
+        print(f"\nExperimento {i}")    
+        print(f"  Nombre del Experimento: {experimento.nombreExperimento}")    
+        print(f"  Fecha de realizacion: {experimento.fechaRealizacion.strftime('%d/%m/%Y')}") 
+        print(f"  Tipo de Experimento: {experimento.TipoExperimento}")    
+        print(f"  Resultado obtenido: {experimento.resultadoObtenido}")     
 
 # Funcion para Eliminar Experimentos               
 def eliminarExperimentos(listaExperimentos):
@@ -106,37 +105,37 @@ def analisisResultados(listaExperimentos):
     resultadosTotales = []
     for experimento in listaExperimentos:
         resultadosTotales.extend(experimento.resultadoObtenido)   
-     
+
     while True:
         print("\nOperaciones Basicas de los resultados")  
         print("1. Promedio: ") 
         print("2. Maximo: ")
         print("3. Minimo: ")
         print("4. Volver: ")
-         
+
         opcion = input("Digite una opcion: ")
         if opcion == "1":
             if resultadosTotales:
-             promedio = statistics.mean(resultadosTotales)
-             print(f"Promedio de todos los resultados: {promedio}")
+                promedio = statistics.mean(resultadosTotales)
+                print(f"Promedio de todos los resultados: {promedio}")
             else:
                 print("No hay resultados para analizar.")
                 
         elif opcion == "2":
-              if resultadosTotales:
+            if resultadosTotales:
                 maximo = max(resultadosTotales)
                 print(f"Maximo de todos los resultados: {maximo}")
-              else:
-                  print("No hay resultados para analizar.")  
-                  
+            else:
+                print("No hay resultados para analizar.")  
+
         elif opcion == "3":
-              if resultadosTotales:
+            if resultadosTotales:
                 minimo = min(resultadosTotales)
                 print(f"Minimo de todos los resultados: {minimo}")
-              else:
-                  print("No hay resultados para analizar.")  
+            else:
+                print("No hay resultados para analizar.")  
         elif opcion == "4":
-           return
+            return
         else:
             print("Opcion Invalidad")
             
@@ -239,37 +238,36 @@ def generarInforme(listaExperimentos):
 
 def menu():
     
-     listaExperimentos = []
-     while True:
-      print("\nMenu de Opciones")  
-      print("1. Agregar un Experimento: ") 
-      print("2. Visualizar Experimentos: ")
-      print("3. Eliminar un Experimento: ")
-      print("4. Calcular Estadisticas: ")
-      print("5. Comparar experimentos: ")
-      print("6. Generar Informe: ")
-      print("7. Salir.")
-     
-      opcion = input("Digite una opcion: ")
-    
-      if opcion =="1":
-              agregarDatos(listaExperimentos) 
+    listaExperimentos = []
+    while True:
+        print("\nMenu de Opciones")  
+        print("1. Agregar un Experimento: ") 
+        print("2. Visualizar Experimentos: ")
+        print("3. Eliminar un Experimento: ")
+        print("4. Calcular Estadisticas: ")
+        print("5. Comparar experimentos: ")
+        print("6. Generar Informe: ")
+        print("7. Salir.")
 
-      elif opcion == "2":
-             visualizarDatos(listaExperimentos)
-          
-      elif opcion == "3":
+        opcion = input("Digite una opcion: ")
+        
+        if opcion =="1":
+            agregarDatos(listaExperimentos) 
+
+        elif opcion == "2":
+            visualizarDatos(listaExperimentos)
+
+        elif opcion == "3":
             eliminarExperimentos(listaExperimentos)
-      elif opcion == "4":
+        elif opcion == "4":
             analisisResultados(listaExperimentos)
-      elif opcion == "5":
-          comparaExperimentos(listaExperimentos)      
-      elif opcion == "6":
+        elif opcion == "5":
+            comparaExperimentos(listaExperimentos)      
+        elif opcion == "6":
             generarInforme(listaExperimentos)   
-      elif opcion == "7": 
-          print("\nGracias por usar.")  
-          break       
-     
+        elif opcion == "7": 
+            print("\nGracias por usar nuestra aplicacion.")  
+            break       
 
 if __name__ == "__main__":
     menu()
