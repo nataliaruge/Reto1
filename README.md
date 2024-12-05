@@ -41,4 +41,7 @@ Funcionalidades principales
 Selección de experimentos: Verifica que se hayan seleccionado al menos dos experimentos válidos para proceder con la comparación
 Comparación de experimentos: Compara los experimentos seleccionados según ciertos criterios (a definir)
 Manejo de errores: Informa al usuario si no se encuentran los experimentos en la lista o si no se seleccionan suficientes experimentos
+
+
+
 >>>>>>> main
